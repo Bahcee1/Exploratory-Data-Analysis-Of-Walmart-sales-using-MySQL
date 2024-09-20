@@ -42,9 +42,6 @@ FROM sales;
 
 ALTER TABLE sales ADD COLUMN time_of_day VARCHAR(20);
 
--- For this to work turn off safe mode for update
--- Edit > Preferences > SQL Edito > scroll down and toggle safe mode
--- Reconnect to MySQL: Query > Reconnect to server
 UPDATE sales
 SET time_of_day = (
 	CASE
@@ -163,7 +160,7 @@ GROUP BY product_line
 ORDER BY avg_tax DESC;
 
 
--- Fetch each product line and add a column to those product 
+-- Fetching each product line and add a column to those product 
 -- line showing "Good", "Bad". Good if its greater than average sales
 
 SELECT 
